@@ -42,7 +42,7 @@ model Project {
   isSellable Boolean  @default(false)
   variantId  String?
   thumbnail  String?
-  themeName  String?
+  themeName  String   @default("light")
 
   User       User   @relation("OwnedProjects", fields: [userId], references: [id])
   Purchasers User[] @relation("PurchasedProjects")
