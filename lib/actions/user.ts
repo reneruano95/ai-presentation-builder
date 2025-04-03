@@ -1,3 +1,5 @@
+"use server";
+
 import { currentUser } from "@clerk/nextjs/server";
 import { client } from "../prisma/prisma";
 
@@ -57,7 +59,7 @@ export const onAuthenticateUser = async () => {
       status: 400, // Status code for bad request
     };
   } catch (error) {
-    console.error("Error fetching user:", error);
+    console.error("🔴 Error:", error);
 
     return {
       user: null,
